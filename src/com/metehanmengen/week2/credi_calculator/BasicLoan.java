@@ -13,7 +13,7 @@ public abstract class BasicLoan {
 
     enum LoanType {PERSONAL, MORTGAGE, AGRICULTURAL, TEACHER, FLEX,}
 
-    public BasicLoan(String ID_No, String name, String lastName, long loanAmount, LoanType loanType, LocalDate dueDate) {
+    protected BasicLoan(String ID_No, String name, String lastName, long loanAmount, LoanType loanType, LocalDate dueDate) {
         this.ID_No = ID_No;
         this.name = name;
         this.lastName = lastName;
@@ -22,12 +22,12 @@ public abstract class BasicLoan {
         this.drawnDownDate = dueDate;
     }
 
-    public BasicLoan ()
+    protected BasicLoan ()
     {
         this("", "", "", 0, LoanType.FLEX, LocalDate.of(2035, 1, 1));
     }
 
-    public BasicLoan(int year, int month, int day)
+    protected BasicLoan(int year, int month, int day)
     {
         this("", "", "", 0, LoanType.FLEX, LocalDate.of(year, month, day));
     }
